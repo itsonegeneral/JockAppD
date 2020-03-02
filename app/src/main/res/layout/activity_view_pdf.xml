@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
     android:orientation="vertical"
-    tools:context=".ImageListActivity">
+    tools:context=".ViewPdfActivity">
 
     <include
-        android:id="@+id/tb_activityImageList"
+        android:id="@+id/tb_viewPdf"
         layout="@layout/toolbar_home" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rView_imageList"
+    <com.github.barteksc.pdfviewer.PDFView
         android:layout_width="match_parent"
+        android:id="@+id/pdfView"
         android:layout_height="match_parent" />
+
 
 
 </LinearLayout>

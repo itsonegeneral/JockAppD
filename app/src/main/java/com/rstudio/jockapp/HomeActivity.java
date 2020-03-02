@@ -9,7 +9,9 @@ import android.view.View;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.FirebaseApp;
 import com.rstudio.jockapp.adapters.ViewPagerAdapter;
+import com.rstudio.jockapp.fragments.DPFragment;
 import com.rstudio.jockapp.fragments.HomeFragment;
+import com.rstudio.jockapp.fragments.PDFFragment;
 
 /**
  * Developed by Rithik S (tubeviral88@gmail.com)
@@ -29,8 +31,8 @@ public class HomeActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         adapter.addFrag(new HomeFragment(), "Home");
-        adapter.addFrag(new HomeFragment(), "DP");
-        adapter.addFrag(new HomeFragment(), "PDF");
+        adapter.addFrag(new DPFragment(), "DP");
+        adapter.addFrag(new PDFFragment(), "PDF");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

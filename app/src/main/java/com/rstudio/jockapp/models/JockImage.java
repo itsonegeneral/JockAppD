@@ -50,6 +50,8 @@ public class JockImage implements Serializable {
         return downloadUrl;
     }
 
+
+
     public void setDownloadUrl(String downloadUrl) {
         this.downloadUrl = downloadUrl;
     }

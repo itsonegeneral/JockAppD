@@ -21,11 +21,11 @@ public class DPFragment extends Fragment {
     private LinearLayout layout;
     private MaterialCardView cardOne;
 
-    DPFragment(){
+    public DPFragment() {
 
     }
 
-    DPFragment(Context context){
+    public DPFragment(Context context) {
 
     }
 

@@ -11,16 +11,28 @@ public class Jock implements Serializable {
     String JockName;
     String JockBody;
     String type;
+    String jockTitle;
+
     long timestamp;
 
     public Jock() {
     }
 
-    public Jock(String JockName, String JockBody, String type, long timestamp) {
+    public Jock(String JockName, String JockBody, String type, long timestamp,String jockTitle) {
         this.JockName = JockName;
         this.JockBody = JockBody;
         this.type = type;
         this.timestamp = timestamp;
+        this.jockTitle = jockTitle;
+    }
+
+
+    public String getJockTitle() {
+        return jockTitle;
+    }
+
+    public void setJockTitle(String jockTitle) {
+        this.jockTitle = jockTitle;
     }
 
     public long getTimestamp() {
