@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="small_text_font_1" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="small_text_font_2" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="large_text_font_2" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">22sp</item>
+    </style>
+    <style name="large_text_font" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">17sp</item>
+    </style>
+    <style name="large_text_font_21" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="orange_button_size" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">22sp</item>
+        <item name="android:layout_height">60dp</item>
+    </style>
+
+    <style name="margin_size">
+        <item name="android:textSize">22sp</item>
+
+    </style>
+
+    <style name="margin_size1">
+        <item name="android:layout_marginTop">50dp</item>
+    </style>
+
+    <style name="v_small_text_font_2" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="medium_text_font_2" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="video_icon_size" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_height">60dp</item>
+    </style>
+
+    <style name="edit_icon_size" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_height">65dp</item>
+    </style>
+
+    <style name="land_video_icon_size" parent="@android:style/TextAppearance.Medium">
+
+        <item name="android:layout_height">95dp</item>
+    </style>
+
+    <style name="x_large_font" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">32sp</item>
+    </style>
+    <style name="xx_large_font" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">36sp</item>
+    </style>
+    <style name="padding_size" parent="@android:style/TextAppearance.Medium">
+        <item name="android:padding">28dp</item>
+    </style>
+
+    <style name="full_video_icon_size" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">334.4dp</item>
+        <item name="android:layout_height">190dp</item>
+    </style>
+    <style name="browse_channel_icon_size" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">38dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="adidas_size" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">110dp</item>
+        <item name="android:layout_height">110dp</item>
+    </style>
+    <style name="add_icon_size" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+    </style>
+    <style name="search_icon_size" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">48dp</item>
+    </style>
+    <style name="company_icon_size" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+    </style>
+    <style name="or_size" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">46dp</item>
+        <item name="android:layout_height">46dp</item>
+    </style>
+</resources>

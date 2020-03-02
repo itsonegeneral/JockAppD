@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "839277227485",
+    "firebase_url": "https://jockapp-3d876.firebaseio.com",
+    "project_id": "jockapp-3d876",
+    "storage_bucket": "jockapp-3d876.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839277227485:android:ad023085703165f2",
+        "android_client_info": {
+          "package_name": "admin.app.jock.com.jockappadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839277227485-3l6po1and8bqhcbv9l8f5me3o9tho9et.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0caVNuiYy5Sq8uV3uMm-tmlNxosyYFfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839277227485-3l6po1and8bqhcbv9l8f5me3o9tho9et.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839277227485:android:95467f7aa59c12ce",
+        "android_client_info": {
+          "package_name": "com.jock.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839277227485-3l6po1and8bqhcbv9l8f5me3o9tho9et.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0caVNuiYy5Sq8uV3uMm-tmlNxosyYFfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839277227485-3l6po1and8bqhcbv9l8f5me3o9tho9et.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-7658005144929111~3683870702"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839277227485:android:609a5d4eba2d53dfa55a34",
+        "android_client_info": {
+          "package_name": "com.rstudio.jockapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839277227485-3l6po1and8bqhcbv9l8f5me3o9tho9et.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0caVNuiYy5Sq8uV3uMm-tmlNxosyYFfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839277227485-3l6po1and8bqhcbv9l8f5me3o9tho9et.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
