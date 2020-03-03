@@ -17,7 +17,9 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.rstudio.jockapp.DataStore;
 import com.rstudio.jockapp.R;
+import com.rstudio.jockapp.TextPagerActivity;
 import com.rstudio.jockapp.models.Jock;
 
 import java.util.ArrayList;
@@ -47,9 +49,9 @@ public class JocksTextAdapter extends RecyclerView.Adapter<JocksTextAdapter.Item
     class ItemViewHolder extends RecyclerView.ViewHolder {
 
 
-        TextView jockName,tvTitle;
-        LinearLayout deleteJock;
-        ImageButton btnWhatsapp, btnTelegram, btnMore,btnCopy;
+        TextView jockName, tvTitle;
+        LinearLayout layout;
+        ImageButton btnWhatsapp, btnTelegram, btnMore, btnCopy;
 
 
         public ItemViewHolder(View view) {
@@ -60,8 +62,8 @@ public class JocksTextAdapter extends RecyclerView.Adapter<JocksTextAdapter.Item
             btnMore = view.findViewById(R.id.imgBtn_More);
             btnWhatsapp = view.findViewById(R.id.imgBtn_Whatsapp);
             tvTitle = view.findViewById(R.id.tv_listTextTitle);
-            btnCopy= view.findViewById(R.id.imgBtn_Copy);
-
+            btnCopy = view.findViewById(R.id.imgBtn_Copy);
+            layout = view.findViewById(R.id.clickParent);
 
 
         }
@@ -80,21 +82,22 @@ public class JocksTextAdapter extends RecyclerView.Adapter<JocksTextAdapter.Item
         Jock product = jocks.get(position);
 
         holder.jockName.setText(product.getJockBody());
-        if(product.getJockTitle() ==null){
+        if (product.getJockTitle() == null) {
             holder.tvTitle.setText("Title not available, this maybe post from old apk");
-        }else{
+        } else {
             holder.tvTitle.setText(product.getJockTitle());
         }
 
-        /*holder.btnWhatsapp.setOnClickListener(new View.OnClickListener() {
+
+        holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent i=new Intent(mContext, PagerActivityForJocks.class);
-                i.putExtra("Jock_list",jocks);
-                i.putExtra("position",position);
-                mContext.startActivity(i);
+            public void onClick(View v) {
+                DataStore.jocks = jocks;
+                mContext.startActivity(new Intent(mContext, TextPagerActivity.class));
             }
-        });*/
+        });
+
+
         holder.btnWhatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
