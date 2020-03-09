@@ -94,7 +94,7 @@ public class JocksTextAdapter extends RecyclerView.Adapter<JocksTextAdapter.Item
 
             AdRequest adRequest = new AdRequest.Builder().build();
             adView.setAdSize(AdSize.BANNER);
-            adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+            adView.setAdUnitId("ca-app-pub-9352960187047894/2284048995");
             adView.loadAd(adRequest);
             view = adView;
         } else
@@ -121,7 +121,7 @@ public class JocksTextAdapter extends RecyclerView.Adapter<JocksTextAdapter.Item
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DataStore.jocks = jocks;
+                DataStore.jocks = (jocks);
                 Intent intent = new Intent(mContext, TextPagerActivity.class);
                 intent.putExtra("position", position);
                 mContext.startActivity(intent);

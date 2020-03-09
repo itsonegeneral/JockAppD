@@ -104,14 +104,15 @@ public class JockTextListActivity extends AppCompatActivity {
                     int i = 0;
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Jock jock = snapshot.getValue(Jock.class);
-                        if (jock.getType().toLowerCase().equalsIgnoreCase(cat))
+                        if (jock.getType().toLowerCase().equalsIgnoreCase(cat)) {
                             if (i % 5 == 0) {
                                 jockArrayList.add(null);
                             }
-                        jockArrayList.add(jock);
+                            jockArrayList.add(jock);
+                        }
                         i++;
                     }
-                    if (jockArrayList.size() == 1) {
+                    if (jockArrayList.size() == 1 || jockArrayList.isEmpty()) {
                         Toast.makeText(JockTextListActivity.this, "No Texts", Toast.LENGTH_SHORT).show();
                     } else {
                         adapter = new JocksTextAdapter(JockTextListActivity.this, jockArrayList);

@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.studentshub.studymateriala.fragments.InterstitialFragment;
 import com.studentshub.studymateriala.fragments.TextItemFragment;
 import com.studentshub.studymateriala.models.Jock;
 
@@ -111,7 +112,11 @@ public class TextPagerActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new TextItemFragment(jockArrayList.get(position));
+            if (jockArrayList.get(position) != null) {
+                return new TextItemFragment(jockArrayList.get(position));
+            } else {
+                return new InterstitialFragment();
+            }
         }
 
         @Override

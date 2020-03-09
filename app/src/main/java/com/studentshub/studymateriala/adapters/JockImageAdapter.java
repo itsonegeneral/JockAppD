@@ -98,7 +98,7 @@ public class JockImageAdapter extends RecyclerView.Adapter<JockImageAdapter.Item
 
             AdRequest adRequest = new AdRequest.Builder().build();
             adView.setAdSize(AdSize.BANNER);
-            adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+            adView.setAdUnitId(mContext.getString(R.string.banner_ad_id));
             adView.loadAd(adRequest);
             view = adView;
         } else

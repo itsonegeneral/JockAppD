@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.studentshub.studymateriala.fragments.ImageItemFragment;
+import com.studentshub.studymateriala.fragments.InterstitialFragment;
 import com.studentshub.studymateriala.models.JockImage;
 
 import java.util.ArrayList;
@@ -110,7 +111,11 @@ public class ImagePagerActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new ImageItemFragment(jockArrayList.get(position));
+            if(jockArrayList.get(position) !=null) {
+                return new ImageItemFragment(jockArrayList.get(position));
+            }else{
+                return new InterstitialFragment();
+            }
         }
 
         @Override

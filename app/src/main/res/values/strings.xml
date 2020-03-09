@@ -8,6 +8,10 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+
+    <string name="inter_ad_id">ca-app-pub-9352960187047894/1461921916</string>
+    <string name="banner_ad_id">ca-app-pub-9352960187047894/2284048995</string>
+
     <string name="cat1">One</string>
     <string name="cat2">Two</string>
     <string name="cat3">Three</string>
