@@ -1,4 +1,4 @@
-package com.rstudio.jockapp.fragments;
+package com.studentshub.studymateriala.fragments;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -17,11 +17,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.rstudio.jockapp.ImageListActivity;
-import com.rstudio.jockapp.R;
-import com.rstudio.jockapp.models.Jock;
+import com.studentshub.studymateriala.ImageListActivity;
+import com.studentshub.studymateriala.R;
+import com.studentshub.studymateriala.models.Jock;
 
 public class TextItemFragment extends Fragment {
 

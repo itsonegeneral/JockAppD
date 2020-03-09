@@ -1,4 +1,4 @@
-package com.rstudio.jockapp;
+package com.studentshub.studymateriala;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,10 +15,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.rstudio.jockapp.fragments.ImageItemFragment;
-import com.rstudio.jockapp.fragments.TextItemFragment;
-import com.rstudio.jockapp.models.Jock;
-import com.rstudio.jockapp.models.JockImage;
+import com.studentshub.studymateriala.fragments.ImageItemFragment;
+import com.studentshub.studymateriala.models.JockImage;
 
 import java.util.ArrayList;
 

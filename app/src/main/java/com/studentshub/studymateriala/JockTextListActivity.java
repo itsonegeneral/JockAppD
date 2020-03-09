@@ -1,4 +1,4 @@
-package com.rstudio.jockapp;
+package com.studentshub.studymateriala;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -14,7 +14,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,8 +22,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.rstudio.jockapp.adapters.JocksTextAdapter;
-import com.rstudio.jockapp.models.Jock;
+import com.studentshub.studymateriala.adapters.JocksTextAdapter;
+import com.studentshub.studymateriala.models.Jock;
 
 import java.util.ArrayList;
 

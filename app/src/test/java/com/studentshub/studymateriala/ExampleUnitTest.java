@@ -1,4 +1,4 @@
-package com.rstudio.jockapp;
+package com.studentshub.studymateriala;
 
 import org.junit.Test;
 

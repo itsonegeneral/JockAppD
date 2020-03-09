@@ -1,7 +1,7 @@
-package com.rstudio.jockapp;
+package com.studentshub.studymateriala;
 
-import com.rstudio.jockapp.models.Jock;
-import com.rstudio.jockapp.models.JockImage;
+import com.studentshub.studymateriala.models.Jock;
+import com.studentshub.studymateriala.models.JockImage;
 
 import java.util.ArrayList;
 

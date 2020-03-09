@@ -1,7 +1,6 @@
-package com.rstudio.jockapp;
+package com.studentshub.studymateriala;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -11,17 +10,14 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.FirebaseApp;
-import com.rstudio.jockapp.adapters.ViewPagerAdapter;
-import com.rstudio.jockapp.fragments.DPFragment;
-import com.rstudio.jockapp.fragments.HomeFragment;
-import com.rstudio.jockapp.fragments.PDFFragment;
+import com.studentshub.studymateriala.adapters.ViewPagerAdapter;
+import com.studentshub.studymateriala.fragments.DPFragment;
+import com.studentshub.studymateriala.fragments.HomeFragment;
+import com.studentshub.studymateriala.fragments.PDFFragment;
 
 /**
  * Developed by Rithik S (tubeviral88@gmail.com)

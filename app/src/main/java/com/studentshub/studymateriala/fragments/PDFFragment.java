@@ -1,35 +1,19 @@
-package com.rstudio.jockapp.fragments;
+package com.studentshub.studymateriala.fragments;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.AssetManager;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.card.MaterialCardView;
-import com.rstudio.jockapp.BuildConfig;
-import com.rstudio.jockapp.R;
-import com.rstudio.jockapp.ViewPdfActivity;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-
-import static android.content.ContentValues.TAG;
+import com.studentshub.studymateriala.R;
+import com.studentshub.studymateriala.ViewPdfActivity;
 
 public class PDFFragment extends Fragment {
 

@@ -1,4 +1,4 @@
-package com.rstudio.jockapp.fragments;
+package com.studentshub.studymateriala.fragments;
 
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,8 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.card.MaterialCardView;
-import com.rstudio.jockapp.JockTextListActivity;
-import com.rstudio.jockapp.R;
+import com.studentshub.studymateriala.JockTextListActivity;
+import com.studentshub.studymateriala.R;
 
 public class HomeFragment extends Fragment {
 

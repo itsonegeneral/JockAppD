@@ -1,4 +1,4 @@
-package com.rstudio.jockapp;
+package com.studentshub.studymateriala;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -6,17 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.app.ProgressDialog;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,10 +21,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.rstudio.jockapp.adapters.JockImageAdapter;
-import com.rstudio.jockapp.models.JockImage;
+import com.studentshub.studymateriala.adapters.JockImageAdapter;
+import com.studentshub.studymateriala.models.JockImage;
 
-import java.security.cert.CertificateRevokedException;
 import java.util.ArrayList;
 
 public class ImageListActivity extends AppCompatActivity {

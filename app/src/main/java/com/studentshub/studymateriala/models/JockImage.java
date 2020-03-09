@@ -1,4 +1,4 @@
-package com.rstudio.jockapp.models;
+package com.studentshub.studymateriala.models;
 import java.io.Serializable;
 
 /**

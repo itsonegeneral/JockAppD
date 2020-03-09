@@ -1,4 +1,4 @@
-package com.rstudio.jockapp.fragments;
+package com.studentshub.studymateriala.fragments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,9 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.card.MaterialCardView;
-import com.rstudio.jockapp.ImageListActivity;
-import com.rstudio.jockapp.JockTextListActivity;
-import com.rstudio.jockapp.R;
+import com.studentshub.studymateriala.ImageListActivity;
+import com.studentshub.studymateriala.R;
 
 public class DPFragment extends Fragment {
 

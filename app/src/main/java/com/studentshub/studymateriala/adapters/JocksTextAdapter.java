@@ -1,19 +1,16 @@
-package com.rstudio.jockapp.adapters;
+package com.studentshub.studymateriala.adapters;
 
 import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ResolveInfo;
-import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,13 +20,12 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.material.card.MaterialCardView;
-import com.rstudio.jockapp.DataStore;
-import com.rstudio.jockapp.R;
-import com.rstudio.jockapp.TextPagerActivity;
-import com.rstudio.jockapp.models.Jock;
+import com.studentshub.studymateriala.DataStore;
+import com.studentshub.studymateriala.R;
+import com.studentshub.studymateriala.TextPagerActivity;
+import com.studentshub.studymateriala.models.Jock;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 /**

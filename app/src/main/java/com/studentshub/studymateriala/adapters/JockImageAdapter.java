@@ -1,4 +1,4 @@
-package com.rstudio.jockapp.adapters;
+package com.studentshub.studymateriala.adapters;
 
 import android.Manifest;
 import android.app.Activity;
@@ -31,10 +31,10 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
-import com.rstudio.jockapp.DataStore;
-import com.rstudio.jockapp.ImagePagerActivity;
-import com.rstudio.jockapp.R;
-import com.rstudio.jockapp.models.JockImage;
+import com.studentshub.studymateriala.DataStore;
+import com.studentshub.studymateriala.ImagePagerActivity;
+import com.studentshub.studymateriala.R;
+import com.studentshub.studymateriala.models.JockImage;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 

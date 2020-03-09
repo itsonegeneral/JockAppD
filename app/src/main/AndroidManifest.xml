@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rstudio.jockapp">
+    package="com.studentshub.studymateriala">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -22,12 +22,12 @@
 
 
 
-        <activity android:name=".ImagePagerActivity"></activity>
-        <activity android:name=".TextPagerActivity" />
-        <activity android:name=".ViewPdfActivity" />
-        <activity android:name=".ImageListActivity" />
-        <activity android:name=".JockTextListActivity" />
-        <activity android:name=".HomeActivity">
+        <activity android:name="com.studentshub.studymateriala.ImagePagerActivity"></activity>
+        <activity android:name="com.studentshub.studymateriala.TextPagerActivity" />
+        <activity android:name="com.studentshub.studymateriala.ViewPdfActivity" />
+        <activity android:name="com.studentshub.studymateriala.ImageListActivity" />
+        <activity android:name="com.studentshub.studymateriala.JockTextListActivity" />
+        <activity android:name="com.studentshub.studymateriala.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
