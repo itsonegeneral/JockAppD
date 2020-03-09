@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-
 
 
     <ScrollView
@@ -16,11 +15,12 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="10dp"
             android:layout_marginStart="5dp"
+            app:contentPadding="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="5dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            app:cardElevation="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,33 +36,10 @@
                     android:padding="5dp">
 
 
-                    <TextView
-                        android:id="@+id/tv_listTextTitle"
-                        style="@style/large_text_font"
+                    <ImageView
+                        android:id="@+id/imgView_jockPager"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        android:ellipsize="end"
-                        android:maxLines="2"
-                        android:padding="10dp"
-                        android:text="jkavjkkjhv"
-                        android:textColor="#000"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-
-                    <TextView
-                        android:id="@+id/textView"
-                        style="@style/large_text_font"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="10dp"
-                        android:text="jkavjkkjhv"
-                        android:textColor="#000" />
-
+                        android:layout_height="200dp" />
 
                 </LinearLayout>
 
@@ -74,14 +51,6 @@
 
     </ScrollView>
 
-
-    <Button
-        android:layout_width="wrap_content"
-        android:text="View More"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/btn_viewMore"
-        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="match_parent"

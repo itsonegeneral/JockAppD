@@ -10,13 +10,21 @@
 
     <include
         android:id="@+id/tb_activityjocktextlist"
-        layout="@layout/toolbar_home"/>
+        layout="@layout/toolbar_home" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tb_activityjocktextlist"
+        app:iconifiedByDefault="false" />
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@+id/tb_activityjocktextlist"
-        android:layout_width="match_parent"
         android:id="@+id/rView_textList"
-        android:layout_height="match_parent"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchView" />
 
 
 </RelativeLayout>

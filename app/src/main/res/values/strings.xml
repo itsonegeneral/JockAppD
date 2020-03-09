@@ -8,4 +8,14 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="cat1">One</string>
+    <string name="cat2">Two</string>
+    <string name="cat3">Three</string>
+    <string name="cat4">Four</string>
+    <string name="cat5">Five</string>
+    <string name="cat6">Six</string>
+    <string name="cat7">Seven</string>
+    <string name="cat8">Eight</string>
+
+
 </resources>

@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -26,7 +27,7 @@ import com.rstudio.jockapp.fragments.PDFFragment;
  * Developed by Rithik S (tubeviral88@gmail.com)
  * GitHub /itsonegeneral
  */
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity {
 
     private static final String TAG = "HomeActivity";
     DrawerLayout drawerLayout;
@@ -53,10 +54,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         tabLayout.setupWithViewPager(viewPager);
 
 
-        NavigationView navigationView = findViewById(R.id.navView);
-        drawerLayout = findViewById(R.id.drawerLayout);
-        navigationView.setNavigationItemSelectedListener(this);
-
         setToolbar("Section 1");
 
     }
@@ -76,40 +73,33 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.nav_Item1: {
-                updateUI("Section 1");
-                break;
-            }
-            case R.id.nav_Item2: {
-                updateUI("Section 2");
-                break;
-            }
-            case R.id.nav_Item3: {
-                updateUI("Section 3");
-                break;
-            }
-            case R.id.nav_Item4: {
-                updateUI("Section 4");
-                break;
-            }
-            case R.id.nav_Item5: {
-                updateUI("Section 5");
-                break;
-            }
-            case R.id.nav_Item6: {
-                updateUI("Section 6");
-                break;
-            }
-
-
-        }
-        return true;
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.menu_aboutUs: {
+
+                break;
+            }
+            case R.id.menu_moreApps: {
+                break;
+            }
+            case R.id.menu_rateUs: {
+                break;
+            }
+            default: {
+                return super.onOptionsItemSelected(item);
+            }
+        }
+
+        return false;
+    }
 
     private void setToolbar(String title) {
 
@@ -117,16 +107,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         TextView tv = findViewById(R.id.tv_toolbarHeading);
-        tv.setText(title);
-
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout,
-                toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
+        tv.setText("Home");
 
 
     }
-
-
 }
+
+
+

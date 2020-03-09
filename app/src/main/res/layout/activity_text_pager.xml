@@ -4,16 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".TextPagerActivity">
 
     <include
         android:id="@+id/tb_activityTextPager"
-        layout="@layout/toolbar_home"/>
+        layout="@layout/toolbar_home" />
 
 
     <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
         android:id="@+id/viewPager_text"
-        android:layout_height="match_parent"/>
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imgBtn_prev"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/ic_navigate_before_black_24dp"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imgBtn_next"
+            android:layout_width="50dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_navigate_next_black"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless" />
+
+    </LinearLayout>
 
 </LinearLayout>

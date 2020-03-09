@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import android.app.ProgressDialog;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,6 +38,7 @@ public class ImageListActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<JockImage> jockImageArrayList;
     private Toolbar toolbar;
+    private String cat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,12 @@ public class ImageListActivity extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             setScrollListener();
+        }
+
+        if (getIntent().hasExtra("cat")) {
+            cat = getIntent().getStringExtra("cat");
+        } else {
+
         }
 
         setToolbar();
@@ -61,10 +70,10 @@ public class ImageListActivity extends AppCompatActivity {
         recyclerView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
             @Override
             public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                Log.d(TAG, "onScrollChange: " +oldScrollY);
-                if(oldScrollY<-20){
+                Log.d(TAG, "onScrollChange: " + oldScrollY);
+                if (oldScrollY < -20) {
                     toolbar.setVisibility(View.GONE);
-                }else if(oldScrollY>30){
+                } else if (oldScrollY > 30) {
                     toolbar.setVisibility(View.VISIBLE);
                 }
             }
@@ -72,29 +81,38 @@ public class ImageListActivity extends AppCompatActivity {
     }
 
     private void loadData() {
+        final ProgressDialog pgDialog = new ProgressDialog(this);
+        pgDialog.setMessage("Please Wait");
+        pgDialog.show();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Jock").child("image");
 
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
-                    for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                pgDialog.dismiss();
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         JockImage jockImage = snapshot.getValue(JockImage.class);
-                        jockImageArrayList.add(jockImage);
+                        if (jockImage.getType().equalsIgnoreCase(cat)) {
+                            jockImageArrayList.add(jockImage);
+                        }
                     }
 
-                    imageAdapter = new JockImageAdapter(ImageListActivity.this,jockImageArrayList);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                    recyclerView.setAdapter(imageAdapter);
-
-                }else{
+                    if (jockImageArrayList.isEmpty()) {
+                        Toast.makeText(ImageListActivity.this, "No Data", Toast.LENGTH_SHORT).show();
+                    } else {
+                        imageAdapter = new JockImageAdapter(ImageListActivity.this, jockImageArrayList);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                        recyclerView.setAdapter(imageAdapter);
+                    }
+                } else {
                     //Empty
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                pgDialog.dismiss();
             }
         });
     }
@@ -110,7 +128,7 @@ public class ImageListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        TextView tv= findViewById(R.id.tv_toolbarHeading);
-        tv.setText("DP");
+        TextView tv = findViewById(R.id.tv_toolbarHeading);
+        tv.setText(cat + " DP");
     }
 }

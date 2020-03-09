@@ -30,6 +30,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.card.MaterialCardView;
+import com.rstudio.jockapp.DataStore;
+import com.rstudio.jockapp.ImagePagerActivity;
 import com.rstudio.jockapp.R;
 import com.rstudio.jockapp.models.JockImage;
 import com.squareup.picasso.Callback;
@@ -62,6 +65,7 @@ public class JockImageAdapter extends RecyclerView.Adapter<JockImageAdapter.Item
     class ItemViewHolder extends RecyclerView.ViewHolder {
 
         ImageView jockImage;
+        MaterialCardView cardView;
         ImageButton btnWhatsapp, btnTelegram, btnMore;
 
 
@@ -71,7 +75,7 @@ public class JockImageAdapter extends RecyclerView.Adapter<JockImageAdapter.Item
             btnTelegram = view.findViewById(R.id.imgBtn_Telegram);
             btnMore = view.findViewById(R.id.imgBtn_More);
             btnWhatsapp = view.findViewById(R.id.imgBtn_Whatsapp);
-
+            cardView = view.findViewById(R.id.card_imageJockList);
         }
     }
 
@@ -99,6 +103,16 @@ public class JockImageAdapter extends RecyclerView.Adapter<JockImageAdapter.Item
             }
         });
 
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DataStore.imageJock = jocks;
+                Intent intent = new Intent(mContext, ImagePagerActivity.class);
+                intent.putExtra("position",position);
+                mContext.startActivity(intent);
+            }
+        });
 
         holder.btnWhatsapp.setOnClickListener(new View.OnClickListener() {
             @Override

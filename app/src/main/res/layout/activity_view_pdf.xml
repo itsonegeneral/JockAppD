@@ -11,11 +11,16 @@
         android:id="@+id/tb_viewPdf"
         layout="@layout/toolbar_home" />
 
-    <com.github.barteksc.pdfviewer.PDFView
+    <WebView
+        android:layout_width="match_parent"
+        android:id="@+id/webView"
+        android:layout_height="match_parent"/>
+
+  <!--  <com.github.barteksc.pdfviewer.PDFView
         android:layout_width="match_parent"
         android:id="@+id/pdfView"
         android:layout_height="match_parent" />
-
+-->
 
 
 </LinearLayout>

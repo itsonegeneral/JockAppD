@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_aboutUs"
+        android:title="About Us" />
+
+    <item
+        android:id="@+id/menu_rateUs"
+        android:title="Rate Us" />
+
+    <item
+        android:id="@+id/menu_moreApps"
+        android:title="More Apps" />
+
+</menu>
