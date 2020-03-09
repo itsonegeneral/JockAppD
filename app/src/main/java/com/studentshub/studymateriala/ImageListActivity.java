@@ -86,11 +86,16 @@ public class ImageListActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 pgDialog.dismiss();
                 if (dataSnapshot.exists()) {
+                    int i = 0;
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         JockImage jockImage = snapshot.getValue(JockImage.class);
                         if (jockImage.getType().equalsIgnoreCase(cat)) {
+                            if (i % 6 == 0) {
+                                jockImageArrayList.add(null);
+                            }
                             jockImageArrayList.add(jockImage);
                         }
+                        i++;
                     }
 
                     if (jockImageArrayList.isEmpty()) {

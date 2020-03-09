@@ -81,7 +81,7 @@ public class JockTextListActivity extends AppCompatActivity {
         for (Jock jock : jockArrayList) {
             if (jock == null) {
                 filter.add(null);
-            }else if (jock.getJockTitle().toLowerCase().contains(text) || jock.getJockBody().toLowerCase().contains(text)) {
+            } else if (jock.getJockTitle().toLowerCase().contains(text) || jock.getJockBody().toLowerCase().contains(text)) {
                 filter.add(jock);
             }
         }
@@ -111,13 +111,15 @@ public class JockTextListActivity extends AppCompatActivity {
                         jockArrayList.add(jock);
                         i++;
                     }
-                    if (jockArrayList.isEmpty()) {
+                    if (jockArrayList.size() == 1) {
                         Toast.makeText(JockTextListActivity.this, "No Texts", Toast.LENGTH_SHORT).show();
                     } else {
                         adapter = new JocksTextAdapter(JockTextListActivity.this, jockArrayList);
                         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                         recyclerView.setAdapter(adapter);
                     }
+                } else {
+                    Toast.makeText(JockTextListActivity.this, "No Data", Toast.LENGTH_SHORT).show();
                 }
             }
 

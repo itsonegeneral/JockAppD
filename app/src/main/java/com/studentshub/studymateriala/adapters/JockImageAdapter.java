@@ -21,6 +21,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -30,6 +31,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.card.MaterialCardView;
 import com.studentshub.studymateriala.DataStore;
 import com.studentshub.studymateriala.ImagePagerActivity;
@@ -54,6 +58,7 @@ public class JockImageAdapter extends RecyclerView.Adapter<JockImageAdapter.Item
     private Context mContext;
     private ArrayList<JockImage> jocks;
     private static final String TAG = "JockImageAdapter";
+    private final int AD_TYPE = 4, CONTENT_TYPE = 13;
 
 
     public JockImageAdapter(Context context, ArrayList<JockImage> jocks) {
@@ -81,12 +86,32 @@ public class JockImageAdapter extends RecyclerView.Adapter<JockImageAdapter.Item
 
     @Override
     public JockImageAdapter.ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_jock_image, parent, false);
-        return new JockImageAdapter.ItemViewHolder(view);
+        View view;
+        Log.d(TAG, "onCreateViewHolder: " + viewType);
+        if (viewType == AD_TYPE) {
+            view = new AdView(mContext);
+            AdView adView = (AdView) view;
+            float density = mContext.getResources().getDisplayMetrics().density;
+            int height = Math.round(AdSize.BANNER.getHeight() * density);
+            AbsListView.LayoutParams params = new AbsListView.LayoutParams(AbsListView.LayoutParams.FILL_PARENT, height);
+            view.setLayoutParams(params);
+
+            AdRequest adRequest = new AdRequest.Builder().build();
+            adView.setAdSize(AdSize.BANNER);
+            adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+            adView.loadAd(adRequest);
+            view = adView;
+        } else
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_jock_image, parent, false);
+        return new ItemViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(JockImageAdapter.ItemViewHolder holder, final int position) {
+
+        if(jocks.get(position) == null){
+            return;
+        }
 
         JockImage product = jocks.get(position);
 
@@ -109,7 +134,7 @@ public class JockImageAdapter extends RecyclerView.Adapter<JockImageAdapter.Item
             public void onClick(View v) {
                 DataStore.imageJock = jocks;
                 Intent intent = new Intent(mContext, ImagePagerActivity.class);
-                intent.putExtra("position",position);
+                intent.putExtra("position", position);
                 mContext.startActivity(intent);
             }
         });
@@ -313,4 +338,12 @@ public class JockImageAdapter extends RecyclerView.Adapter<JockImageAdapter.Item
     }
 
 
+    @Override
+    public int getItemViewType(int position) {
+        if (jocks.get(position) == null) {
+            return AD_TYPE;
+        } else {
+            return CONTENT_TYPE;
+        }
+    }
 }
