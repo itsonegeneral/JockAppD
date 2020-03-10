@@ -40,7 +40,7 @@ public class InterstitialFragment extends Fragment {
             @Override
             public void onAdFailedToLoad(int errorCode) {
                 // Code to be executed when an ad request fails.
-                Toast.makeText(getContext(), "Ad wont show until some traffic" + errorCode, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Ad wont show until some traffic", Toast.LENGTH_SHORT).show();
             }
 
             @Override

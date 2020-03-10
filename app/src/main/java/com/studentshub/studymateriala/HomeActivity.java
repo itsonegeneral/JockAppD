@@ -39,7 +39,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         FirebaseApp.initializeApp(this);
-        MobileAds.initialize(this,"ca-app-pub-9352960187047894~3597130661");
+     //   MobileAds.initialize(this,"ca-app-pub-9352960187047894~3597130661");
 
         TabLayout tabLayout = findViewById(R.id.tabLayout_Home);
         ViewPager viewPager = findViewById(R.id.viewPager_home);

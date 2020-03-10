@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#545454"
     android:orientation="vertical"
     tools:context=".ImagePagerActivity">
 
@@ -15,19 +16,21 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager_text"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/tb_activityTextPager" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/imgBtn_prev"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/ic_navigate_before_black_24dp"
+            android:background="@drawable/ic_navigate_before_white"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackgroundBorderless" />
@@ -41,11 +44,12 @@
             android:id="@+id/imgBtn_next"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/ic_navigate_next_black"
+            android:background="@drawable/ic_navigate_next_white"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackgroundBorderless" />
 
     </LinearLayout>
 
-</LinearLayout>
+
+</RelativeLayout>

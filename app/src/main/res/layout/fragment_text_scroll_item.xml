@@ -75,13 +75,6 @@
     </ScrollView>
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:text="View More"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/btn_viewMore"
-        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -144,6 +137,15 @@
             android:foreground="?android:attr/selectableItemBackgroundBorderless" />
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:text="View More"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btn_viewMore"
+        android:layout_height="wrap_content"/>
+
 
 
 </LinearLayout>

@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/menu_aboutUs"
-        android:title="About Us" />
+        android:title="Share App" />
 
     <item
         android:id="@+id/menu_rateUs"

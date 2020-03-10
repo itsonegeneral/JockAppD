@@ -24,6 +24,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -31,11 +32,18 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.NativeExpressAdView;
+import com.google.android.gms.ads.formats.MediaView;
+import com.google.android.gms.ads.formats.UnifiedNativeAd;
+import com.google.android.gms.ads.formats.UnifiedNativeAdView;
 import com.google.android.material.card.MaterialCardView;
 import com.studentshub.studymateriala.DataStore;
+import com.studentshub.studymateriala.ImageListActivity;
 import com.studentshub.studymateriala.ImagePagerActivity;
 import com.studentshub.studymateriala.R;
 import com.studentshub.studymateriala.models.JockImage;
@@ -70,6 +78,7 @@ public class JockImageAdapter extends RecyclerView.Adapter<JockImageAdapter.Item
     class ItemViewHolder extends RecyclerView.ViewHolder {
 
         ImageView jockImage;
+        NativeExpressAdView adView;
         MaterialCardView cardView;
         ImageButton btnWhatsapp, btnTelegram, btnMore;
 
@@ -81,6 +90,7 @@ public class JockImageAdapter extends RecyclerView.Adapter<JockImageAdapter.Item
             btnMore = view.findViewById(R.id.imgBtn_More);
             btnWhatsapp = view.findViewById(R.id.imgBtn_Whatsapp);
             cardView = view.findViewById(R.id.card_imageJockList);
+            adView = view.findViewById(R.id.nativeAD);
         }
     }
 
@@ -89,18 +99,8 @@ public class JockImageAdapter extends RecyclerView.Adapter<JockImageAdapter.Item
         View view;
         Log.d(TAG, "onCreateViewHolder: " + viewType);
         if (viewType == AD_TYPE) {
-            view = new AdView(mContext);
-            AdView adView = (AdView) view;
-            float density = mContext.getResources().getDisplayMetrics().density;
-            int height = Math.round(AdSize.BANNER.getHeight() * density);
-            AbsListView.LayoutParams params = new AbsListView.LayoutParams(AbsListView.LayoutParams.FILL_PARENT, height);
-            view.setLayoutParams(params);
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_jock_image, parent, false);
 
-            AdRequest adRequest = new AdRequest.Builder().build();
-            adView.setAdSize(AdSize.BANNER);
-            adView.setAdUnitId(mContext.getString(R.string.banner_ad_id));
-            adView.loadAd(adRequest);
-            view = adView;
         } else
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_jock_image, parent, false);
         return new ItemViewHolder(view);
@@ -109,7 +109,20 @@ public class JockImageAdapter extends RecyclerView.Adapter<JockImageAdapter.Item
     @Override
     public void onBindViewHolder(JockImageAdapter.ItemViewHolder holder, final int position) {
 
-        if(jocks.get(position) == null){
+        if (jocks.get(position) == null) {
+            holder.cardView.setVisibility(View.GONE);
+            holder.adView.setVisibility(View.VISIBLE);
+            if (holder.adView.getAdUnitId()==null) {
+                holder.adView.setAdUnitId(mContext.getString(R.string.native_ad_id));
+                holder.adView.setAdSize(AdSize.MEDIUM_RECTANGLE);
+            }
+            holder.adView.loadAd(new AdRequest.Builder().build());
+            holder.adView.setAdListener(new AdListener(){
+                @Override
+                public void onAdLoaded() {
+                    Toast.makeText(mContext, "Loaded", Toast.LENGTH_SHORT).show();
+                }
+            });
             return;
         }
 

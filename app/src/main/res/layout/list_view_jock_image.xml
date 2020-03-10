@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_imageJockList"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:orientation="vertical"
-    android:id="@+id/card_imageJockList"
     app:cardCornerRadius="5dp"
     app:cardElevation="5dp"
     app:contentPadding="10dp">
+
+
+    <com.google.android.gms.ads.NativeExpressAdView
+        android:id="@+id/nativeAD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        ads:adSize="320x300"
+        ads:adUnitId="@string/native_ad_id" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,14 +64,14 @@
                 android:padding="15dp" />
 
 
-            <ImageButton
+            <!--<ImageButton
                 android:id="@+id/imgBtn_Copy"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_marginEnd="7dp"
                 android:background="@drawable/ic_copy"
                 android:padding="15dp" />
-
+-->
 
             <ImageButton
                 android:id="@+id/imgBtn_More"
