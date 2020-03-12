@@ -57,18 +57,6 @@
             android:padding="15dp" />
 
         <ImageButton
-            android:id="@+id/imgBtn_Copy"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="7dp"
-            android:background="@drawable/ic_copy"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackgroundBorderless"
-
-            android:padding="15dp" />
-
-        <ImageButton
             android:id="@+id/imgBtn_More"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
